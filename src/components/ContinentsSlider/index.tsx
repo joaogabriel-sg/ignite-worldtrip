@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Link from "next/link";
 
 SwiperCore.use([A11y, Autoplay, Navigation, Pagination]);
 
@@ -35,30 +36,33 @@ export function ContinentsSlider({ continents }: ContinentsSliderProps) {
       >
         {continents.map((continent) => (
           <SwiperSlide key={continent.id}>
-            <Flex
-              w="100%"
-              h="100%"
-              bgImage={`url('${continent.image}')`}
-              bgRepeat="no-repeat"
-              bgPosition="center"
-              bgSize="cover"
-            >
+            <Link href={`/${continent.id}`}>
               <Flex
                 w="100%"
                 h="100%"
-                bg="rgba(28, 20, 1, 0.35)"
-                direction="column"
-                align="center"
-                justify="center"
+                bgImage={`url('${continent.image}')`}
+                bgRepeat="no-repeat"
+                bgPosition="center"
+                bgSize="cover"
+                cursor="pointer"
               >
-                <Heading as="h3" color="gray.100">
-                  {continent.name}
-                </Heading>
-                <Text mt="4" color="gray.300">
-                  {continent.excerpt}
-                </Text>
+                <Flex
+                  w="100%"
+                  h="100%"
+                  bg="rgba(28, 20, 1, 0.35)"
+                  direction="column"
+                  align="center"
+                  justify="center"
+                >
+                  <Heading as="h3" color="gray.100">
+                    {continent.name}
+                  </Heading>
+                  <Text mt="4" color="gray.300">
+                    {continent.excerpt}
+                  </Text>
+                </Flex>
               </Flex>
-            </Flex>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
