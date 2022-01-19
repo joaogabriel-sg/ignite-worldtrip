@@ -14,12 +14,18 @@ export function Header({ goBack = false }: HeaderProps) {
   }
 
   return (
-    <Flex as="header" w="100%" h="100px" position="relative">
+    <Flex
+      as="header"
+      w="100%"
+      h={["50px", "75px", "100px"]}
+      position="relative"
+    >
       <Flex
         w="100%"
         maxW={1160}
         mx="auto"
         align="center"
+        px="16px"
         justify="space-between"
       >
         {goBack && (
@@ -34,6 +40,8 @@ export function Header({ goBack = false }: HeaderProps) {
 
         <Flex flex="1" justify="center">
           <Image
+            w="auto"
+            h={["25px", "32px", "auto"]}
             src="/logo.svg"
             alt="Um avião voando por cima a logo do worldtrip"
           />

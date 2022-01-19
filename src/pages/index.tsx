@@ -41,9 +41,21 @@ export default function Home({ continents }: HomeProps) {
       <Banner />
       <TravelTypes />
 
-      <Box bg="gray.700" w="90px" h="2px" mt="20" alignSelf="center" />
+      <Box
+        bg="gray.700"
+        w={["60px", "90px"]}
+        h="2px"
+        mt={["9", "20"]}
+        alignSelf="center"
+      />
 
-      <Heading fontSize="4xl" fontWeight="medium" my="14" align="center">
+      <Heading
+        fontSize={["xl", "2xl", "4xl"]}
+        fontWeight="medium"
+        mt={["6", "14"]}
+        mb={["5", "14"]}
+        align="center"
+      >
         Vamos nessa?
         <br />
         Então escolha seu continente

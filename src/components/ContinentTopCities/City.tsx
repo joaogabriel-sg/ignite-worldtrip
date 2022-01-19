@@ -9,7 +9,13 @@ type CityProps = {
 
 export function City({ country, city, flag, thumbnail }: CityProps) {
   return (
-    <Flex flexDir="column" overflow="hidden">
+    <Flex
+      flexDir="column"
+      overflow="hidden"
+      w="100%"
+      maxW={["256px"]}
+      mx="auto"
+    >
       <Image
         src={thumbnail}
         alt="Banner"

@@ -1,33 +1,36 @@
-import { Grid, SimpleGrid } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 
 import { TravelType } from "./TravelType";
 
 export function TravelTypes() {
   return (
     <Grid
-      templateColumns="repeat(5, 1fr)"
+      templateColumns={["1fr 1fr", "1fr 1fr", "1fr 1fr", "repeat(5, 1fr)"]}
       w="100%"
-      maxW={1160}
+      maxW="1160px"
       mx="auto"
-      mt="28"
-      justifyContent="space-between"
-      gap="6"
+      mt={["9", "9", "28"]}
+      px="8px"
+      flexWrap="wrap"
+      align="center"
+      justify="space-between"
+      gap={["16px", 6]}
     >
-      <SimpleGrid>
+      <GridItem>
         <TravelType icon="cocktail" title="Vida noturna" />
-      </SimpleGrid>
-      <SimpleGrid>
+      </GridItem>
+      <GridItem>
         <TravelType icon="surf" title="Praia" />
-      </SimpleGrid>
-      <SimpleGrid>
+      </GridItem>
+      <GridItem>
         <TravelType icon="building" title="Moderno" />
-      </SimpleGrid>
-      <SimpleGrid>
+      </GridItem>
+      <GridItem>
         <TravelType icon="museum" title="Clássico" />
-      </SimpleGrid>
-      <SimpleGrid>
+      </GridItem>
+      <GridItem colSpan={[2, 2, 2, 1]}>
         <TravelType icon="earth" title="E mais..." />
-      </SimpleGrid>
+      </GridItem>
     </Grid>
   );
 }
